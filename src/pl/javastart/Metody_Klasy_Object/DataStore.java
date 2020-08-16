@@ -1,7 +1,5 @@
 package pl.javastart.Metody_Klasy_Object;
 
-import Polimorfizm.Person;
-
 import java.util.Arrays;
 
 public class DataStore {

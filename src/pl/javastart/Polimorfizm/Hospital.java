@@ -1,4 +1,4 @@
-package Polimorfizm;
+package pl.javastart.Polimorfizm;
 
 import java.util.Arrays;
 

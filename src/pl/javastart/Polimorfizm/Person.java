@@ -1,4 +1,4 @@
-package Polimorfizm;
+package pl.javastart.Polimorfizm;
 
 public class Person {
     String firstName, lastName;
