@@ -1,6 +1,8 @@
 package pl.javastart.Interfaces_Ex1;
 
 public class Triangle implements Shape{
+
+    public static final String TRIANGLE = "triangle";
     private double a;
     private double b;
     private double c;
@@ -53,5 +55,15 @@ public class Triangle implements Shape{
     @Override
     public double calculatePerimeter() {
         return a + b + c;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                ", h=" + h + " area " + calculateArea() + " perimeter " + calculatePerimeter() +
+                '}';
     }
 }

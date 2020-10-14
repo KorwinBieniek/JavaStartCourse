@@ -2,10 +2,11 @@ package pl.javastart.Interfaces_Ex1;
 
 public class Rectangle implements Shape{
 
+    public static final String RECTANGLE = "rectangle";
     private double a;
     private double b;
 
-    public Rectangle(int a, int b) {
+    public Rectangle(double a, double b) {
         this.a = a;
         this.b = b;
     }
@@ -34,5 +35,13 @@ public class Rectangle implements Shape{
     @Override
     public double calculatePerimeter() {
         return 2 * a + 2 * b;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "a=" + a +
+                ", b=" + b + " area " + calculateArea() + " perimeter " + calculatePerimeter() +
+                '}';
     }
 }

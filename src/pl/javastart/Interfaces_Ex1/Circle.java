@@ -2,6 +2,7 @@ package pl.javastart.Interfaces_Ex1;
 
 public class Circle implements Shape{
 
+    public static final String CIRCLE = "circle";
     private double r;
 
     public Circle(double r) {
@@ -24,5 +25,12 @@ public class Circle implements Shape{
     @Override
     public double calculatePerimeter() {
         return 2 * Shape.PI * r;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "r=" + r + " area " + calculateArea() + " perimeter " + calculatePerimeter() +
+                '}';
     }
 }
