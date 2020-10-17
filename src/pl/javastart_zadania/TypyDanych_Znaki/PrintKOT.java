@@ -1,4 +1,4 @@
-package pl.javastart.JavaStart_Zadania.TypyDanych_Znaki;
+package pl.javastart_zadania.TypyDanych_Znaki;
 
 public class PrintKOT {
 

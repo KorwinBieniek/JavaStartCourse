@@ -1,4 +1,4 @@
-package pl.javastart.JavaStart_Zadania.TypyDanych_Liczby;
+package pl.javastart_zadania.TypyDanych_Liczby;
 
 public class DataTypes {
     public static void main(String[] args) {
