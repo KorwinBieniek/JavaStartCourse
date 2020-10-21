@@ -10,6 +10,7 @@ public class NumberArgs {
         }
         else{
             printArgs(args);
+            System.out.println();
             List<Integer> list = convertArgsToIntList(args);
             printNums(list);
             System.out.println();
