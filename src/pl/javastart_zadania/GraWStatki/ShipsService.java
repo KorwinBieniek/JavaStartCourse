@@ -1,11 +1,12 @@
 package pl.javastart_zadania.GraWStatki;
 
-import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
-public class Board {
-    private Scanner input = new Scanner(System.in);
-    char[][] board = createBoard(input.nextInt());
+public class ShipsService {
+    private final Scanner input = new Scanner(System.in);
+    private final int sizeOfBoard = input.nextInt();
+    char[][] board = createBoard(sizeOfBoard);
 
 
     public char[][] createBoard(int x) {
@@ -36,6 +37,17 @@ public class Board {
                 System.out.print(chars[j] + "\t");
             }
             System.out.println();
+        }
+    }
+
+    public void prepareBoard() {
+        System.out.println("Please enter number of ships on the board:");
+        int numberOfShips = input.nextInt();
+        Random randY = new Random();
+        Random randX = new Random();
+
+        for (int i = 0; i < numberOfShips; i++) {
+            board[randX.nextInt(sizeOfBoard)][randY.nextInt(sizeOfBoard)] = 'X';
         }
     }
 
