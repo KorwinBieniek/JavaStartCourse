@@ -5,9 +5,8 @@ public class ShipsApp {
 
         System.out.println("Please enter a dimension of a board:");
         ShipsService b1 = new ShipsService();
+        b1.prepareBoard();
         while(true) {
-            b1.printBoard();
-            b1.prepareBoard();
             b1.printBoard();
             b1.userMove();
         }

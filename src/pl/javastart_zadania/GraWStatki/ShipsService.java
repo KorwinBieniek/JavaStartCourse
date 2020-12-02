@@ -51,6 +51,10 @@ public class ShipsService {
         }
     }
 
+    public boolean isShip(int y, int x) {
+        return board[y][x] != '_';
+    }
+
     public void userMove() {
         boolean moveCompleted = false;
 
@@ -61,8 +65,13 @@ public class ShipsService {
                 System.out.println("Please enter x coordinate from 1 to " + board.length);
                 int xMove = input.nextInt() - 1;
 
+                if (isShip(yMove, xMove)) {
+                    System.out.println("Boom! The ship at (" + (yMove+1) + ";" + (xMove+1) + ") got hit");
+                    board[yMove][xMove] = 'V';
+                } else {
+                    System.out.println("Miss! There was no ship at (" + (yMove+1) + ";" + (xMove+1) + ")");
+                }
                 moveCompleted = true;
-                board[yMove][xMove] = 'X';
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("The number has to be between 1 and " + board.length);
             }
