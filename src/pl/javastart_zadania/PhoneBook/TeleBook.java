@@ -1,6 +1,8 @@
 package pl.javastart_zadania.PhoneBook;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 //Komenatarz do testowania hotfixu -- gitflow
@@ -28,7 +30,29 @@ public class TeleBook {
         }
     }
 
-    public void find(){}
+    public List<Contact> findByName(String name) {
+        List<Contact> result = new ArrayList<>();
+        for (Map.Entry<String, Contact> stringContactEntry : contacts.entrySet()) {
+            if (stringContactEntry.getKey().contains(name)) {
+                result.add(stringContactEntry.getValue());
+            }
+        }
+        return result;
+    }
 
-    public void remove(){}
+    public List<Contact> findByNumber(String number) {
+        List<Contact> result = new ArrayList<>();
+        for (Map.Entry<String, Contact> stringContactEntry : contacts.entrySet()) {
+            if (stringContactEntry.getValue().getNumber().contains(number)) {
+                result.add(stringContactEntry.getValue());
+            }
+        }
+        return result;
+    }
+
+    public void remove(String name) {
+        if(contacts != null) {
+            contacts.remove(name);
+        }
+    }
 }
