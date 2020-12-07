@@ -3,6 +3,7 @@ package pl.javastart_zadania.PhoneBook;
 import java.util.HashMap;
 import java.util.Map;
 
+//Komenatarz do testowania hotfixu -- gitflow
 public class TeleBook {
     Map<String, Contact> contacts = new HashMap<>();
 
