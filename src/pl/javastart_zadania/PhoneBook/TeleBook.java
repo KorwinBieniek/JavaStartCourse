@@ -6,6 +6,7 @@ import java.util.Map;
 //Komenatarz do testowania hotfixu -- gitflow
 
 //Mergowanie komenda
+//Kolejna linia
 public class TeleBook {
     Map<String, Contact> contacts = new HashMap<>();
 
