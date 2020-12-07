@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 //Komenatarz do testowania hotfixu -- gitflow
+
+//Mergowanie komenda
 public class TeleBook {
     Map<String, Contact> contacts = new HashMap<>();
 
