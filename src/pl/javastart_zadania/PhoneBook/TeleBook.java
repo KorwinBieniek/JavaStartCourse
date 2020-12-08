@@ -12,6 +12,7 @@ import java.util.Map;
 public class TeleBook {
     Map<String, Contact> contacts = new HashMap<>();
 
+
     public boolean add(String name, String number) {
         if(name == null || number == null) {
             throw new IllegalArgumentException("Name and number cannot be null");
@@ -22,7 +23,14 @@ public class TeleBook {
         if (number.length() != 9) {
             throw new IllegalArgumentException("Number needs to have 9 digits");
         }
-        if(!contacts.containsKey(name)) {
+        boolean flag = true;
+        for (Contact value : contacts.values()) {
+            if (value.getNumber().equals(number)) {
+                flag = false;
+                break;
+            }
+        }
+        if(!contacts.containsKey(name) && flag) {
             contacts.put(name, new Contact(name, number));
             return true;
         } else {
@@ -50,9 +58,7 @@ public class TeleBook {
         return result;
     }
 
-    public void remove(String name) {
-        if(contacts != null) {
-            contacts.remove(name);
-        }
+    public boolean remove(String name) {
+        return contacts.remove(name) != null;
     }
 }
