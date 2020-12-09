@@ -1,12 +1,17 @@
 package pl.javastart_zadania.PhoneBook;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class TeleBookController {
-    private final TeleBook teleBook = new TeleBook();
+    private TeleBook teleBook;
     private final Scanner input = new Scanner(System.in);
+
+    public TeleBookController() {
+        teleBook = FileUtilities.read();
+    }
 
     public void loop() {
         OPTIONS option = null;
@@ -93,6 +98,12 @@ public class TeleBookController {
 
     private void close() {
         input.close();
-        System.out.println("Bye bye");
+        try {
+            FileUtilities.saveFile(teleBook);
+            System.out.println("Zapisano zmiany.");
+        } catch (IOException e) {
+            System.err.println("Nie udało się zapisać zmian");
+        }
+        System.out.println("Bye bye.");
     }
 }
