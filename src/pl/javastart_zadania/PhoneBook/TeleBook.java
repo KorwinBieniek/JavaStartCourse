@@ -12,12 +12,6 @@ import java.util.Map;
 public class TeleBook {
     Map<String, Contact> contacts = new HashMap<>();
 
-    public TeleBook() {
-    }
-
-    public TeleBook(Map<String, Contact> contacts) {
-        this.contacts = contacts;
-    }
 
     public boolean add(String name, String number) {
         if(name == null || number == null) {
